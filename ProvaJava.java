@@ -1,7 +1,9 @@
 /* Llegir els noms de les  màquines i imprimir-los*/
 /** Per cada màquina imprimir els numeros de productes que les seves vendes siguin inferiors a 40 unitats */
 /* Per cada màquina imprimir el màxim de productes que ha venut*/
-/* Mostrar quin és el producte que mes s'ha venut*/
+/* Mostrar quin és el producte que mes s'ha venut
+aaaa
+*/
 import java.util.*; 
 public class ProvaJava {
 public static void main(String[] args) {
