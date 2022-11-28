@@ -29,6 +29,7 @@ public class TronchoOrdenats3 {
             
         }
     }
+    /* Sortida per pantalla*/
     System.out.println(ordenado);
     }  
     }
