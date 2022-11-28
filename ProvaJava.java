@@ -1,55 +1,35 @@
-/* Llegir els noms de les  màquines i imprimir-los*/
-/** Per cada màquina imprimir els numeros de productes que les seves vendes siguin inferiors a 40 unitats */
-/* Per cada màquina imprimir el màxim de productes que ha venut*/
-/* Mostrar quin és el producte que mes s'ha venut*/
-import java.util.*; 
-public class ProvaJava {
-public static void main(String[] args) {
-    /* Portar l'scanner*/
-        Scanner teclat = new Scanner (System.in);
-    /* Declarar variables*/
-    String maquina;
-    String maquinamaxima = "";
-    int productemaxfinal = 0;
-/* Variable de quantes unitats s'han venut del producte més venut*/
-    int maximunitats = 0;
-/* Variable del producte més venut de la màquina*/
-    int maximproducte = 0;
-    /* Llegir el text de l'entrada, bucle*/
+/** Donats n números enters, dir si estan ordenats creixentment. */
 
-        while(teclat.hasNext()){
-        maquina = teclat.next();
-        System.out.println(maquina);
-        System.out.print("Menys venuts: ");
-        
-        /* Passar per els 6 productes*/
-        for(int x = 1; x <= 6; x++){
-            int vendes = teclat.nextInt();
-            /** si vendes és menor de 40 imprimir  Producte -- amb -- unitats */
-            if(vendes < 40){
-                System.out.print("Producte "+ x + " amb "+ vendes + " unitats. ");
-            }
-            /* Si les vendes son superiors a maximunitats actualitzar la variable i actualitzar el valor maximproducte a x*/
-            if(vendes > maximunitats){
-            maximproducte = x;
-            maximunitats = vendes;
-            }
-               /* Saber quina és la màquina que més ha venut*/
-                if(maximunitats > productemaxfinal){
-                maquinamaxima = maquina;
-                productemaxfinal = maximunitats;
+import java.util.Scanner; 
+public class TronchoOrdenats3 {
+  public static void main(String[] args){
+    Scanner scanner = new Scanner (System.in);
+    int numero1 = 0; //memòria
+    int numero2 = 0; //numero nou llegit
+    int n = scanner.nextInt(); // valor de l'entrada de teclat
+    boolean ordenado = true;
+    
+    
+    /* Si n es més gran que  0 */
 
-                 }
+    if(n>0)
+        numero1 = scanner.nextInt();
+    /* Mentre i sigui més petita que n s'executa el bucle*/
+    
+    for(int i = 1; i < n && ordenado; i++){
+        numero2 = scanner.nextInt();
+        if(numero2 >= numero1){
+            numero1 = numero2;
+        }else{
+            /* Actualitzar ordenat*/
+            ordenado = false;
+            /* LLegir si queda alguna cosa*/
+            scanner.nextLine();
+            /* Sortir del bucle*/
+            
         }
-        System.out.println("");
-        /* Imprimir el prodcte més venut de cada màquina*/
-        System.out.println("Mes venut: " + " Producte " + maximproducte + " amb "+ maximunitats  + " unitats. ");
-        /* Saber quina és la màquina que més ha venut*/
-        
-        }
-        System.out.println("El par màquina / producte de majors vendes és: " + maquinamaxima + "/" + maximunitats + " unitats");
-
-
-
-}
-}
+    }
+    /* Sortida per pantalla*/
+    System.out.println(ordenado);
+    }  
+    }
